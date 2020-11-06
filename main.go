@@ -47,7 +47,7 @@ func main() {
 		ErrorHandling: promhttp.ContinueOnError,
 	})
 
-	http.Handle("/metrics", handler)
+	http.Handle("/", handler)
 	fmt.Printf("Parity/Etherscan prometheus exporter started on port %s\n", exporterPort)
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", exporterPort), nil))
